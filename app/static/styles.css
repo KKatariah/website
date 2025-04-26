@@ -1,0 +1,45 @@
+/* BORDERS */
+
+@font-face {
+	font-family: Daedric;
+	src: url(./src/fonts/Daedric.ttf);
+}
+
+@font-face {
+	font-family: DaedricWorn;
+	src: url(./src/fonts/DaedricWorn.ttf);
+}
+
+@font-face {
+	font-family: MagicCards;
+	src: url(./src/fonts/MagicCards.ttf);
+}
+
+body {
+	font-family: MagicCards;
+	background-color: #5d5d5d;
+
+.thick-border {
+	border: 4px solid;
+	padding: 5px;
+	border-image: url(./src/menu/thick_border/thick_border.png) 4 fill repeat;
+}
+.thin-border {
+	border: 2px solid;
+	padding: 5px;
+	border-image: url(./src/menu/thin_border/thin_border.png) 2 fill repeat;
+}
+	
+.testing {
+	background-color: #000000d9;
+	color: #6A5734;
+}
+
+
+/*
+gold #6A5734
+brown-gold #484138
+light gold #7F6C50
+black #060501
+blue accent #2A4B51
+*/
