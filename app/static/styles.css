@@ -17,15 +17,17 @@
 
 * {
 	cursor: url(./src/cursor/cursor.png) 0 0, auto;
-	font-family: MagicCard;
-	/* scrollbar-color: #6a5734 #060501; */
+	font-family: MagicCards;
+	image-rendering: pixelated;
+	color: #7f6c50;
+	font-size: 10px;
 }
+
 /* vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv */
 /*Scroll bar - does not work on Firefox or Edge*/
 /* TODO: fix scrollbar arrows padding. try to add border to scrollbar */
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
- {
-}
+
 ::-webkit-scrollbar-track-piece {
 	background-color: #060501;
 	border-image: url(./src/menu/thick_border/thick_border.png) 2 fill repeat;
@@ -90,30 +92,75 @@ body {
 
 .thick-border {
 	border: 4px solid;
-	padding: 5px;
+	padding: 0px;
 	border-image: url(./src/menu/thick_border/thick_border.png) 4 fill repeat;
 	image-rendering: pixelated;
+	background-color: #0605016e;
 }
 
 .thin-border {
 	border: 2px solid;
-	padding: 5px;
+	padding: 2px;
+	margin: 2px;
 	border-image: url(./src/menu/thin_border/thin_border.png) 2 fill repeat;
 	image-rendering: pixelated;
 }
+
+.make-flex {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+.outer-border {
+	margin: 0.5px;
+}
+
+.status-bars {
+	min-width: 100px;
+	text-align: center;
+
+	box-shadow: inset 0px -6px 10px 1px black, inset 0px 2px 9px 2px #ffffff5a;
+}
+
+.profile-column {
+	width: 50%;
+	float: left;
+}
+
+.profile-row {
+	display: flex;
+}
+
+.divider-bottom {
+	border-bottom: 2px solid;
+	border-image: url(./src/menu/thin_border/thin_border.png) 2 fill repeat;
+}
+
 .head {
 	border: 2px solid;
-	padding: 5px;
 	border-image: url(./src/menu/head/head_border.png) 2 fill repeat;
 
 	background-image: url(./src/menu/head/menu_head_block_middle.png);
 	image-rendering: pixelated;
+
+	padding: 3px 5px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	max-height: 10px;
 }
 
-.head-title {
+.head > p {
 	background-color: #000000d9;
-	color: #6a5734;
-	padding: 5px;
+	color: #7f6c50;
+	padding: 0px 5px;
+	height: inherit;
+	border: #2a4b51 2px solid;
+	image-rendering: pixelated;
+	border-image: url(./src/menu/button/button-frame-inverted2.png) 4 fill repeat;
 }
 
 button {

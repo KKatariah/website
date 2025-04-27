@@ -3,23 +3,160 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../static/styles.css" />
+		<title>index page</title>
 	</head>
-	<body>
-		<h1>This is a heading</h1>
-		<p>This is a paragraph.</p>
-		<div class="thick-border" style="max-height: 100px; overflow-y: scroll;">
-			<p class="thin-border">hello eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-			<div class="head"
-			<div class="head-title">
+	<body class="make-flex">
+		<!-- Profile Box -->
+		<div class="thick-border outer-border">
+			<div class="head">
+				<p>Katariah</p>
 			</div>
-			<a class="head-title" href="https://www.example.com">This is a link</a>
-			<div class="head"></div>	
-			<button> Button </button>	
+			<div class="thick-border make-flex">
+				<!-- Profile Col 1 -->
+				<div class="profile-column">
+					<!-- Status Bars -->
+					<div class="thin-border profile-row">
+						<p>Health</p>
+						<div
+							class="thin-border status-bars"
+							style="
+								background: linear-gradient(
+									to right,
+									red 0%,
+									red 50%,
+									#ffffff00 50%,
+									#ffffff00 100%
+								);
+							"
+						>
+							50/100
+						</div>
+						<p>Magicka</p>
+						<div
+							class="thin-border status-bars"
+							style="
+								background: linear-gradient(
+									to right,
+									blue 0%,
+									blue 75%,
+									#ffffff00 75%,
+									#ffffff00 100%
+								);
+							"
+						>
+							75/100
+						</div>
+						<p>Fatigue</p>
+						<div
+							class="thin-border status-bars"
+							style="
+								background: linear-gradient(
+									to right,
+									green 0%,
+									green 15%,
+									#ffffff00 15%,
+									#ffffff00 100%
+								);
+							"
+						>
+							15/100
+						</div>
+					</div>
+					<!-- Character Info -->
+					<div class="thin-border profile-row">
+						<div class="profile-column">
+							<p>Level</p>
+							<p>Race</p>
+							<p>Class</p>
+						</div>
+						<div class="profile-column" style="text-align: right">
+							<p>21</p>
+							<p>Dunmer</p>
+							<p>Sorcerer</p>
+						</div>
+					</div>
+					<!-- Attributes -->
+					<div class="thin-border profile-row">
+						<div class="profile-column">
+							<p>Strength</p>
+							<p>Intelligence</p>
+							<p>Willpower</p>
+							<p>Agility</p>
+							<p>Speed</p>
+							<p>Endurance</p>
+							<p>Personality</p>
+							<p>Luck</p>
+						</div>
+						<div class="profile-column" style="text-align: right">
+							<p>30</p>
+							<p>80</p>
+							<p>60</p>
+							<p>30</p>
+							<p>30</p>
+							<p>30</p>
+							<p>80</p>
+							<p>70</p>
+						</div>
+					</div>
+				</div>
+				<!-- Profile Col 2-->
+				<div class="thin-border profile-column">
+					<!-- Skills -->
+					<!-- Major Skills -->
+					<div class="profile-row divider-bottom">
+						<p>Major Skills</p>
+						<div class="profile-column ">
+								<p>Destruction</p> <p>Restoration</p> <p>Alteration</p> <p>Conjuration</p> <p>Alchemy</p>
+					 	</div>
+						<div class="profile-column ">
+								<p>50</p><p>50</p><p>50</p><p>50</p><p>50</p>
+						</div>
+
+					</div>
+					<!-- Minor Skills -->
+					 <div class="profile-row divider-bottom">
+						<p>Minor Skills</p>
+						<div class="profile-column ">
+								<p>Enchant</p> <p>Illusion</p> <p>Speechcraft</p> <p>Security</p> <p>Short Blade</p>
+					 	</div>
+						<div class="profile-column ">
+								<p>50</p><p>50</p><p>50</p><p>50</p><p>50</p>
+						</div>
+					</div>
+					<!-- Misc Skills -->
+					<div class="profile-row divider-bottom">
+						<p>Misc Skills</p>
+						<div class="profile-column ">
+							
+							<p>Block</p>
+							<p>Marksman</p>
+							<p>Medium Armor</p>
+							<p>Heavy Armor</p>
+							<p>Long Blade</p>
+						</div>
+						<div class="profile-column ">
+							<p>50</p>
+							<p>50</p>
+							<p>50</p>
+							<p>50</p>
+							<p>50</p>
+							<p>50</p>
+						</div>
+
+					</div>
 		</div>
-			
+		<!-- Spells Box-->
+		<div class="thick-border outer-border">
+			<div class="head">
+				<p>Almsivi Intervention</p>
+			</div>
+			<div class="thick-border">
+				<div class="thin-border">
+					<p>hewwo</p>
+				</div>
+			</div>
 		</div>
-		
 	</body>
 </html>
 
-<!--<img src="../static/src/menu/head/">-->
+<!-- TODO: add support for smaller screen sizes-->
