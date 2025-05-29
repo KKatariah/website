@@ -86,7 +86,11 @@ a:hover,
 }
 
 body {
-	font-family: MagicCards;
+	/*container*/
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas: "stats spells map" "profile profile map";
 	background-color: #5d5d5d;
 }
 
@@ -161,6 +165,42 @@ body {
 	border: #2a4b51 2px solid;
 	image-rendering: pixelated;
 	border-image: url(./src/menu/button/button-frame-inverted2.png) 4 fill repeat;
+}
+
+.map {
+	background-image: url(./src/vvardenfell_map.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.avatar {
+	background-image: url(./src/avatar.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	image-rendering: pixelated;
+}
+
+.inventory {
+	display: grid;
+	/* grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	gap: 2px; */
+}
+
+.status-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(3, 1fr);
+	gap: 2px;
 }
 
 button {

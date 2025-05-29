@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="../static/styles.css" />
+	<title>Testing Page</title>
+</head>
+<body>
+	<div class="container">
+		<div class="item thick-border">box1</div>
+		<div class="item thick-border">
+			<p class="sub-item thin-border">box 2</p>
+		</div>
+		<div class="item thick-border">box3</div>
+	</div>
+</body>
+<style>
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		column-gap: 10px;
+	}
+</style>
