@@ -14,17 +14,13 @@
 	font-family: MagicCards;
 	src: url(./src/fonts/MagicCards.ttf);
 }
-
-* {
-	cursor: url(./src/cursor/cursor.png) 0 0, auto;
-	font-family: MagicCards;
-	image-rendering: pixelated;
-	color: #7f6c50;
-	font-size: 10px;
+body {
+	background-color: #5d5d5d;
+	margin: 0;
+	min-height: 100vh;
+	padding-top: var(--header-offset, 90px);
+	font-family: MagicCards, serif;
 }
-
-/* vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv */
-/*Scroll bar - does not work on Firefox or Edge*/
 /* TODO: fix scrollbar arrows padding. try to add border to scrollbar */
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
 
@@ -85,22 +81,144 @@ a:hover,
 	cursor: url(./src/cursor/cursor_underscore.png) 0 0, auto;
 }
 
-body {
-	/*container*/
-	display: grid;
-	grid-template-columns: 2fr 2fr 3fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-template-areas: "stats spells map" "profile profile map";
+:root {
+	--content-width: 90vw;
+	--content-side-margin: 5vw; /* (100 - 90) / 2 */
+	/* Spacing now relative to root font-size (rem) so they scale with viewport */
+	--gap-xs: 0.4rem; /* ~4px at base */
+	--gap-sm: 0.8rem; /* ~8px */
+	--gap-md: 1.6rem; /* ~16px */
+	--gap-lg: 3.2rem; /* ~32px */
+	--panel-pad-x: clamp(0.8rem, 2vw, 3.2rem);
+	--panel-pad-y: clamp(0.8rem, 2vh, 2.8rem);
+	--font-scale-min: 10px;
+	--font-scale-max: 20px; /* allow larger scale on very wide screens */
+	--base-font-size: 10px; /* base for * selector usage */
+}
 
-	background-color: #5d5d5d;
+/* Gentle up-scaling for large / 4K widths */
+@media (min-width: 1800px) {
+	:root {
+		--base-font-size: 11px;
+	}
+}
+@media (min-width: 2300px) {
+	:root {
+		--base-font-size: 12px;
+	}
+}
+@media (min-width: 3000px) {
+	:root {
+		--base-font-size: 13px;
+	}
+}
+
+/* Fluid root font sizing for responsiveness */
+/* Fluid root sizing: grows smoothly with width, capped for readability */
+html {
+	font-size: clamp(var(--font-scale-min), 0.6vw + 8px, var(--font-scale-max));
+}
+
+/* Dedicated layout only for index page */
+.index-layout {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(240px, 1fr));
+	grid-template-areas:
+		"stats spells map"
+		"profile profile map";
+	gap: 24px;
+	padding: 16px 2vw; /* small internal padding */
+	box-sizing: border-box;
+	width: var(--content-width);
+	margin: 0 var(--content-side-margin) 64px var(--content-side-margin);
+	background: #18140cbd;
+	border: 4px solid;
+	border-image: url(./src/menu/thick_border/thick_border.png) 4 fill repeat;
+	image-rendering: pixelated;
+}
+
+/* Additional breakpoint to reduce to 2 columns before single column */
+@media (max-width: 1250px) and (min-width: 801px) {
+	.index-layout {
+		grid-template-columns: repeat(2, minmax(260px, 1fr));
+		grid-template-areas: "stats spells" "profile map";
+	}
+}
+
+@media (max-width: 1100px) {
+	.index-layout {
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		grid-template-areas:
+			"stats"
+			"spells"
+			"profile"
+			"map";
+	}
+}
+
+/* Generic page container for content pages */
+.page-container {
+	width: var(--content-width);
+	margin: 0 var(--content-side-margin) 64px var(--content-side-margin);
+	box-sizing: border-box;
+	/* Reduce vertical padding to lessen large empty area at top */
+	padding: calc(var(--panel-pad-y) * 0.55) var(--panel-pad-x)
+		calc(var(--panel-pad-y) * 0.75);
+	background: #18140cbd;
+	border: 4px solid;
+	border-image: url(./src/menu/thick_border/thick_border.png) 4 fill repeat;
+}
+
+/* Inner thick-border directly inside page container: trim top padding */
+.page-container > .thick-border {
+	padding-top: 12px !important;
+}
+
+/* Remove extra top margin on first heading inside a page container */
+.page-container h1:first-child,
+.page-container > .thick-border > h1:first-child,
+.page-container > .thick-border > div > h1:first-child {
+	margin-top: 0;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+/* Anchor "button" styling to match <button> */
+.button,
+a.button {
+	display: inline-block;
+	text-decoration: none;
+	border: 4px solid;
+	padding: 2px 6px;
+	border-image: url(./src/menu/button/button-frame.png) 4 fill repeat;
+	image-rendering: pixelated;
+	background-color: #000000d9;
+	color: #6a5734;
+	font-size: 1em;
+}
+.button:active,
+a.button:active {
+	border-image: url(./src/menu/button/button-frame-inverted2.png) 4 fill repeat;
+	color: #484138;
+	transform: scale(0.98);
 }
 
 .thick-border {
 	border: 4px solid;
-	padding: 0px;
+	padding: 0; /* keep inner boxes tight; outer enhancements moved */
 	border-image: url(./src/menu/thick_border/thick_border.png) 4 fill repeat;
 	image-rendering: pixelated;
-	background-color: #0605016e;
+	background-color: #0605016e; /* original translucency */
 }
 
 .thin-border {
@@ -118,7 +236,8 @@ body {
 }
 
 .outer-border {
-	margin: 0.5px;
+	/* Remove horizontal margin so width rule can control full 90vw span on top-level; retain vertical gap later */
+	margin: 0 0 32px 0;
 }
 
 .status-bars {
@@ -140,23 +259,33 @@ body {
 	background-image: url(./src/menu/head/menu_head_block_middle.png);
 	image-rendering: pixelated;
 
-	padding: 3px 5px;
+	padding: 4px 6px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+}
 
-	max-height: 10px;
+.head p,
+.head > p {
+	margin: 0;
 }
 
 .head > p {
 	background-color: #000000d9;
 	color: #7f6c50;
-	padding: 0px 5px;
-	height: inherit;
+	padding: 4px 10px;
 	border: #2a4b51 2px solid;
 	image-rendering: pixelated;
 	border-image: url(./src/menu/button/button-frame-inverted2.png) 4 fill repeat;
+}
+
+/* Aspect ratios to stabilize layout */
+.avatar {
+	aspect-ratio: 3 / 4;
+}
+.map {
+	aspect-ratio: 4 / 3;
 }
 
 .map {
@@ -207,10 +336,289 @@ button {
 	background-color: #000000d9;
 	color: #6a5734;
 }
+button:focus-visible,
+a:focus-visible {
+	outline: 2px solid #2a4b51;
+	outline-offset: 2px;
+}
+button:hover,
+a.button:hover {
+	filter: brightness(1.1);
+}
 button:active {
 	border-image: url(./src/menu/button/button-frame-inverted2.png) 4 fill repeat;
 	color: #484138;
 	transform: scale(0.98);
+}
+
+/* Responsive utilities */
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Prevent oversized full-width containers creating horizontal scroll */
+html {
+	overflow-x: hidden;
+}
+
+/* Typography tweaks for readability within 10px base aesthetic */
+h1 {
+	font-size: 2.4em;
+	line-height: 1.1;
+}
+h2 {
+	font-size: 1.8em;
+	line-height: 1.15;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #e0cfa9;
+}
+p,
+li {
+	line-height: 1.35;
+}
+
+/* Content page default sizing (other pages looked smaller than home due to global 10px base) */
+.page-container {
+	/* Slightly larger base relative to 10px global so paragraphs/headings feel consistent */
+	font-size: 1.2em; /* 10px * 1.2 = 12px effective base inside content pages */
+}
+.page-container p,
+.page-container li {
+	font-size: 1.1em; /* ~13.2px */
+}
+.page-container h1 {
+	font-size: 2.2em; /* align with home page inline heading */
+}
+.page-container h2 {
+	font-size: 1.6em;
+}
+
+/* Vintage box utility for ad‑hoc layouts */
+.vintage-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	justify-content: space-between;
+}
+.vintage-box {
+	flex: 1 1 300px;
+	min-width: 260px;
+	margin: 8px 0;
+}
+
+/* Subtle shadow reminiscent of older bevel effects */
+/* Only outer-level thick borders get enhanced shadow/padding */
+.outer-border.thick-border {
+	/* No padding so inner border sits flush */
+	padding: 0;
+	background-color: #060501b0;
+	box-shadow: 0 0 0 1px #000000cc, 0 2px 4px #00000080 inset;
+}
+
+/* Top-level outer bordered panels span 90% viewport with 5% side gaps */
+body > .outer-border.thick-border {
+	width: 90vw;
+	margin: 0 5vw 64px 5vw; /* symmetric side gap + bottom spacing */
+}
+
+/* Pets page */
+.pets-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	gap: var(--gap-md, 16px);
+}
+.pet-card {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-sm, 8px);
+	background: #060501a8;
+}
+.pet-img-placeholder {
+	aspect-ratio: 4 / 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background: #0d0a06;
+}
+.pet-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	image-rendering: auto;
+}
+.pet-caption {
+	text-align: center;
+	font-size: 0.95em;
+	background: #000000b0;
+	padding: 4px;
+}
+/* Collage / bento variant */
+.pets-grid.collage {
+	display: block; /* switch off grid to use multi-column masonry */
+	column-count: 4;
+	column-gap: 8px;
+}
+@media (max-width: 1400px) {
+	.pets-grid.collage {
+		column-count: 3;
+	}
+}
+@media (max-width: 900px) {
+	.pets-grid.collage {
+		column-count: 2;
+	}
+}
+@media (max-width: 600px) {
+	.pets-grid.collage {
+		column-count: 1;
+	}
+}
+
+.pets-grid.collage figure.pet-card {
+	break-inside: avoid;
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 8px 0; /* tighter vertical spacing */
+	background: #060501d0;
+}
+.pets-grid.collage .pet-img-placeholder {
+	padding: 0;
+	margin: 0;
+	aspect-ratio: auto; /* allow natural orientation */
+	background: #0d0a06;
+}
+.pets-grid.collage img.pet-img {
+	display: block;
+	width: 100%;
+	height: auto; /* preserve original orientation */
+	object-fit: contain; /* avoid cropping */
+}
+@media (max-width: 600px) {
+	.pets-grid {
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+	}
+}
+
+/* Status bar adaptive height */
+.status-bars {
+	height: clamp(8px, 1.2vh, 14px);
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (max-width: 800px) {
+	.index-layout {
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		grid-template-areas: "stats" "spells" "profile" "map";
+		padding: 12px 3vw;
+		width: 94vw;
+		margin: 0 3vw 48px 3vw;
+	}
+	.page-container {
+		width: 94vw;
+		margin: 0 3vw 48px 3vw;
+		padding: 16px 3vw;
+	}
+	.outer-border {
+		margin: 8px;
+	}
+}
+
+/* Center and constrain nav content to align with page width */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+header nav.thick-border {
+	width: var(--content-width);
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-left: 1.5vw;
+	padding-right: 1.5vw;
+}
+
+/* Responsive navigation toggle */
+.nav-toggle {
+	display: none;
+	background: #000000d9;
+	border: 2px solid;
+	border-image: url(./src/menu/button/button-frame.png) 4 fill repeat;
+	color: #6a5734;
+	font-size: 1em;
+}
+.nav-links {
+	display: flex;
+	gap: var(--gap-md);
+	align-items: center;
+}
+@media (max-width: 700px) {
+	.nav-toggle {
+		display: inline-block;
+	}
+	.nav-links {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		flex-direction: column;
+		align-items: flex-start;
+		background: #1e180e;
+		padding: var(--gap-sm) var(--gap-md);
+		border: 4px solid;
+		border-image: url(./src/menu/thick_border/thick_border.png) 4 fill repeat;
+		display: none;
+		min-width: 180px;
+	}
+	.nav-links.open {
+		display: flex;
+	}
+}
+
+/* Lite borders for very small screens to save space */
+@media (max-width: 480px) {
+	.thick-border {
+		border-image: none;
+		border: 2px solid #3a3326;
+	}
+	.thin-border {
+		border-image: none;
+		border: 1px solid #3a3326;
+	}
+}
+
+/* Scrollable sections if content grows too tall in index layout */
+.thick-border > .thick-border {
+	max-height: 100%;
+}
+
+@media (max-width: 600px) {
+	* {
+		font-size: 11px;
+	}
+	.head > p {
+		font-size: 1.1em;
+	}
+}
+
+/* Reduced motion preference (placeholder for future animations) */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+		animation: none !important;
+	}
 }
 
 /*
@@ -220,3 +628,63 @@ light gold #7F6C50
 black #060501
 blue accent #2A4B51
 */
+
+/* ============================================================= */
+/* Large-screen reactive scaling without breaking border images  */
+/* ============================================================= */
+:root {
+	--scale-factor: 1;
+}
+
+/* Only scale typography & spacing helpers, not border thickness */
+body,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a,
+.status-bars {
+	font-size: calc(1em * var(--scale-factor));
+}
+
+/* Spacing utilities that reference scale-factor */
+.pad-scale {
+	padding: calc(8px * var(--scale-factor));
+}
+
+@media (min-width: 1600px) {
+	:root {
+		--scale-factor: 1.1;
+	}
+}
+@media (min-width: 1900px) {
+	:root {
+		--scale-factor: 1.18;
+	}
+}
+@media (min-width: 2200px) {
+	:root {
+		--scale-factor: 1.26;
+	}
+}
+@media (min-width: 2600px) {
+	:root {
+		--scale-factor: 1.34;
+	}
+}
+@media (min-width: 3000px) {
+	:root {
+		--scale-factor: 1.42;
+	}
+}
+
+/* Prevent accidental inheritance making nested font-size explode */
+.thick-border,
+.thin-border {
+	font-size: inherit;
+}

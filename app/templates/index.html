@@ -5,262 +5,280 @@
 		<link rel="stylesheet" href="../static/styles.css" />
 		<title>index page</title>
 	</head>
-	<body class="">
-		<!-- Profile Box -->
-		<div class="thick-border outer-border" style="grid-area: stats">
-			<div class="head">
-				<p>Katariah</p>
-			</div>
-			<div class="thick-border grid-2x2">
-				<!-- Profile Col 1 -->
-				<div class="">
-					<!-- Status Bars -->
-					<div class="thin-border grid-2x2">
-						<p>Health</p>
-						<div
-							class="thin-border status-bars"
-							style="
-								background: linear-gradient(
-									to right,
-									red 0%,
-									red 50%,
-									#ffffff00 50%,
-									#ffffff00 100%
-								);
-							"
-						>
-							50/100
+	<body>
+		<header style="position: fixed; top: 0; left: 0; width: 100%; z-index: 100">
+			<site-nav></site-nav>
+		</header>
+		<div class="index-layout">
+			<!-- Profile Box -->
+			<div
+				class="thick-border outer-border"
+				style="grid-area: stats; min-width: 0"
+			>
+				<div class="head">
+					<p>Katariah</p>
+				</div>
+				<div class="thick-border grid-2x2">
+					<!-- Profile Col 1 -->
+					<div class="">
+						<!-- Status Bars -->
+						<div class="thin-border grid-2x2">
+							<p>Health</p>
+							<div
+								class="thin-border status-bars"
+								style="
+									background: linear-gradient(
+										to right,
+										red 0%,
+										red 50%,
+										#ffffff00 50%,
+										#ffffff00 100%
+									);
+								"
+							>
+								50/100
+							</div>
+							<p>Magicka</p>
+							<div
+								class="thin-border status-bars"
+								style="
+									background: linear-gradient(
+										to right,
+										blue 0%,
+										blue 75%,
+										#ffffff00 75%,
+										#ffffff00 100%
+									);
+								"
+							>
+								75/100
+							</div>
+							<p>Fatigue</p>
+							<div
+								class="thin-border status-bars"
+								style="
+									background: linear-gradient(
+										to right,
+										green 0%,
+										green 15%,
+										#ffffff00 15%,
+										#ffffff00 100%
+									);
+								"
+							>
+								15/100
+							</div>
 						</div>
-						<p>Magicka</p>
+						<!-- Character Info -->
+						<div class="thin-border grid-2x2">
+							<div class="">
+								<p>Level</p>
+								<p>Race</p>
+								<p>Class</p>
+							</div>
+							<div class="" style="text-align: right">
+								<p>21</p>
+								<p>Dunmer</p>
+								<p>Sorcerer</p>
+							</div>
+						</div>
+						<!-- Attributes -->
+						<div class="thin-border grid-2x2">
+							<div class="">
+								<p>Strength</p>
+								<p>Intelligence</p>
+								<p>Willpower</p>
+								<p>Agility</p>
+								<p>Speed</p>
+								<p>Endurance</p>
+								<p>Personality</p>
+								<p>Luck</p>
+							</div>
+							<div class="" style="text-align: right">
+								<p>30</p>
+								<p>80</p>
+								<p>60</p>
+								<p>30</p>
+								<p>30</p>
+								<p>30</p>
+								<p>80</p>
+								<p>70</p>
+							</div>
+						</div>
+					</div>
+					<!-- Profile Col 2-->
+					<!-- Skills -->
+					<div class="thin-border">
+						<!-- Major Skills -->
+						<div class="divider-bottom">
+							Major Skills
+							<div class="grid-2x2">
+								<div class="">
+									<p>Destruction</p>
+									<p>Restoration</p>
+									<p>Alteration</p>
+									<p>Conjuration</p>
+									<p>Alchemy</p>
+								</div>
+								<div class="">
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+								</div>
+							</div>
+						</div>
+						<!-- Minor Skills -->
+						<div class="divider-bottom">
+							Minor Skills
+							<div class="grid-2x2">
+								<div class="">
+									<p>Enchant</p>
+									<p>Illusion</p>
+									<p>Speechcraft</p>
+									<p>Security</p>
+									<p>Short Blade</p>
+								</div>
+								<div class="">
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+								</div>
+							</div>
+						</div>
+						<!-- Misc Skills -->
+						<div class="">
+							Misc Skills
+							<div class="grid-2x2">
+								<div class="">
+									<p>Block</p>
+									<p>Marksman</p>
+									<p>Medium Armor</p>
+									<p>Heavy Armor</p>
+									<p>Long Blade</p>
+								</div>
+								<div class="">
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+									<p>50</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Spells Box-->
+			<div
+				class="thick-border outer-border"
+				style="grid-area: spells; min-width: 0"
+			>
+				<div class="head">
+					<p>Spellbook</p>
+				</div>
+				<div class="thick-border">
+					<!-- Spell icons -->
+					<div class="thin-border">
+						<img />
+					</div>
+					<!-- Spells & Powers box -->
+					<div class="thin-border">
+						<!-- Powers list -->
+						<div class="divider-bottom">
+							<p>Powers</p>
+							<p>Ancestor Guardian</p>
+						</div>
+						<!-- Spells list -->
+						<div class="grid-2x2">
+							<div class="">
+								<p>Spells</p>
+								<p>Fireball</p>
+								<p>Frostbite</p>
+								<p>Lightning Bolt</p>
+							</div>
+							<div class="">
+								<p>Cost/Chance</p>
+								<p>10/50</p>
+								<p>10/50</p>
+								<p>10/50</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Character Panel -->
+			<div
+				class="thick-border outer-border"
+				style="grid-area: profile; min-width: 0"
+			>
+				<div class="head">
+					<p>Inventory</p>
+				</div>
+				<div class="thick-border grid-temp">
+					<!-- Column 1-->
+					<div class="">
+						<!-- XP Bar-->
 						<div
 							class="thin-border status-bars"
 							style="
 								background: linear-gradient(
 									to right,
 									blue 0%,
-									blue 75%,
+									blue 78%,
 									#ffffff00 75%,
 									#ffffff00 100%
 								);
 							"
 						>
-							75/100
+							78/100
 						</div>
-						<p>Fatigue</p>
+						<!-- Avatar Image-->
 						<div
-							class="thin-border status-bars"
-							style="
-								background: linear-gradient(
-									to right,
-									green 0%,
-									green 15%,
-									#ffffff00 15%,
-									#ffffff00 100%
-								);
-							"
-						>
-							15/100
-						</div>
+							class="thin-border avatar"
+							style="min-height: 100px; min-width: 30px"
+						></div>
 					</div>
-					<!-- Character Info -->
-					<div class="thin-border grid-2x2">
-						<div class="">
-							<p>Level</p>
-							<p>Race</p>
-							<p>Class</p>
-						</div>
-						<div class="" style="text-align: right">
-							<p>21</p>
-							<p>Dunmer</p>
-							<p>Sorcerer</p>
-						</div>
-					</div>
-					<!-- Attributes -->
-					<div class="thin-border grid-2x2">
-						<div class="">
-							<p>Strength</p>
-							<p>Intelligence</p>
-							<p>Willpower</p>
-							<p>Agility</p>
-							<p>Speed</p>
-							<p>Endurance</p>
-							<p>Personality</p>
-							<p>Luck</p>
-						</div>
-						<div class="" style="text-align: right">
-							<p>30</p>
-							<p>80</p>
-							<p>60</p>
-							<p>30</p>
-							<p>30</p>
-							<p>30</p>
-							<p>80</p>
-							<p>70</p>
-						</div>
-					</div>
-				</div>
-				<!-- Profile Col 2-->
-				<!-- Skills -->
-				<div class="thin-border">
-					<!-- Major Skills -->
-					<div class="divider-bottom">
-						Major Skills
-						<div class="grid-2x2">
-							<div class="">
-								<p>Destruction</p>
-								<p>Restoration</p>
-								<p>Alteration</p>
-								<p>Conjuration</p>
-								<p>Alchemy</p>
-							</div>
-							<div class="">
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-							</div>
-						</div>
-					</div>
-					<!-- Minor Skills -->
-					<div class="divider-bottom">
-						Minor Skills
-						<div class="grid-2x2">
-							<div class="">
-								<p>Enchant</p>
-								<p>Illusion</p>
-								<p>Speechcraft</p>
-								<p>Security</p>
-								<p>Short Blade</p>
-							</div>
-							<div class="">
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-							</div>
-						</div>
-					</div>
-					<!-- Misc Skills -->
+					<!-- Column 2-->
 					<div class="">
-						Misc Skills
-						<div class="grid-2x2">
-							<div class="">
-								<p>Block</p>
-								<p>Marksman</p>
-								<p>Medium Armor</p>
-								<p>Heavy Armor</p>
-								<p>Long Blade</p>
-							</div>
-							<div class="">
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-								<p>50</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Spells Box-->
-		<div class="thick-border outer-border" style="grid-area: spells">
-			<div class="head">
-				<p>Spellbook</p>
-			</div>
-			<div class="thick-border">
-				<!-- Spell icons -->
-				<div class="thin-border">
-					<img />
-				</div>
-				<!-- Spells & Powers box -->
-				<div class="thin-border">
-					<!-- Powers list -->
-					<div class="divider-bottom">
-						<p>Powers</p>
-						<p>Ancestor Guardian</p>
-					</div>
-					<!-- Spells list -->
-					<div class="grid-2x2">
+						<!-- Inventory Buttons -->
 						<div class="">
-							<p>Spells</p>
-							<p>Fireball</p>
-							<p>Frostbite</p>
-							<p>Lightning Bolt</p>
+							<button>All</button>
+							<button>Weapons</button>
+							<button>Apparel</button>
+							<button>Magic</button>
+							<button>Misc</button>
 						</div>
-						<div class="">
-							<p>Cost/Chance</p>
-							<p>10/50</p>
-							<p>10/50</p>
-							<p>10/50</p>
+						<!-- Inventory Items-->
+						<div class="thin-border inventory">
+							<p>Item</p>
+							<p>Item</p>
+							<p>Item</p>
+							<p>Item</p>
+							<p>Item</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Character Panel -->
-		<div class="thick-border outer-border" style="grid-area: profile">
-			<div class="head">
-				<p>Inventory</p>
-			</div>
-			<div class="thick-border grid-temp">
-				<!-- Column 1-->
-				<div class="">
-					<!-- XP Bar-->
-					<div
-						class="thin-border status-bars"
-						style="
-							background: linear-gradient(
-								to right,
-								blue 0%,
-								blue 78%,
-								#ffffff00 75%,
-								#ffffff00 100%
-							);
-						"
-					>
-						78/100
-					</div>
-					<!-- Avatar Image-->
-					<div
-						class="thin-border avatar"
-						style="min-height: 100px; min-width: 30px"
-					></div>
-				</div>
-				<!-- Column 2-->
-				<div class="">
-					<!-- Inventory Buttons -->
-					<div class="">
-						<button>All</button>
-						<button>Weapons</button>
-						<button>Apparel</button>
-						<button>Magic</button>
-						<button>Misc</button>
-					</div>
-					<!-- Inventory Items-->
-					<div class="thin-border inventory">
-						<p>Item</p>
-						<p>Item</p>
-						<p>Item</p>
-						<p>Item</p>
-						<p>Item</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--Map-->
-		<div class="thick-border outer-border" style="grid-area: map">
-			<div class="head">
-				<p>Map</p>
-			</div>
+			<!--Map-->
 			<div
-				class="thick-border map"
-				style="min-height: 200px; min-width: 200px"
-			></div>
+				class="thick-border outer-border"
+				style="grid-area: map; min-width: 0"
+			>
+				<div class="head">
+					<p>Map</p>
+				</div>
+				<div
+					class="thick-border map"
+					style="min-height: 200px; min-width: 200px"
+				></div>
+			</div>
 		</div>
+		<script src="../static/nav-component.js"></script>
 	</body>
 </html>
 

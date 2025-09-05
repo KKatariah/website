@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../static/styles.css" />
+		<title>My Fonts - Katariah</title>
+		<style>
+			.font-preview {
+				margin-bottom: 32px;
+				padding: 24px;
+				background: #18140c;
+			}
+			.font-title {
+				font-size: 1.5em;
+				color: #e0cfa9;
+				margin-bottom: 0.5em;
+			}
+			.sample-text {
+				font-size: 2em;
+				color: #b6a07a;
+				margin-bottom: 0.5em;
+			}
+			.download-link {
+				color: #e0cfa9;
+				text-decoration: underline;
+				font-size: 1em;
+			}
+			.daedric {
+				font-family: Daedric, MagicCards, serif;
+			}
+			.daedricworn {
+				font-family: DaedricWorn, MagicCards, serif;
+			}
+			.magiccards {
+				font-family: MagicCards, serif;
+			}
+			.katariah {
+				font-family: "Katariah Handwriting", cursive;
+			}
+			@font-face {
+				font-family: "Katariah Handwriting";
+				src: url(../static/src/Katariah-Handwriting-Regular.ttf);
+			}
+		</style>
+	</head>
+	<body>
+		<header style="position: fixed; top: 0; left: 0; width: 100%; z-index: 100">
+			<site-nav></site-nav>
+		</header>
+		<div
+			class="thick-border outer-border page-container"
+			style="background: #18140c"
+		>
+			<div class="head"><p>My Fonts</p></div>
+			<div class="thick-border" style="padding: 24px; background: #1e180e">
+				<div class="font-preview border-thick outer-border">
+					<div class="font-title daedric">Daedric</div>
+					<div class="sample-text daedric">Sample: Lorem Ipsum</div>
+					<a
+						class="download-link"
+						href="../static/src/fonts/Daedric.ttf"
+						download
+						>Download Daedric.ttf</a
+					>
+				</div>
+				<div class="font-preview border-thick outer-border">
+					<div class="font-title daedricworn">Daedric Worn</div>
+					<div class="sample-text daedricworn">Sample: Lorem Ipsum</div>
+					<a
+						class="download-link"
+						href="../static/src/fonts/DaedricWorn.ttf"
+						download
+						>Download DaedricWorn.ttf</a
+					>
+				</div>
+				<div class="font-preview border-thick outer-border">
+					<div class="font-title magiccards">MagicCards</div>
+					<div class="sample-text magiccards">Sample: Lorem Ipsum</div>
+					<a
+						class="download-link"
+						href="../static/src/fonts/MagicCards.ttf"
+						download
+						>Download MagicCards.ttf</a
+					>
+				</div>
+				<div class="font-preview border-thick outer-border">
+					<div class="font-title katariah">Katariah Handwriting</div>
+					<div class="sample-text katariah">
+						Sample: The quick brown fox jumps over the lazy dog.
+					</div>
+					<a
+						class="download-link"
+						href="../static/src/Katariah-Handwriting-Regular.ttf"
+						download
+						>Download Katariah-Handwriting-Regular.ttf</a
+					>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../static/nav-component.js"></script>
+</html>
