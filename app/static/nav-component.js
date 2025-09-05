@@ -1,7 +1,7 @@
 class SiteNav extends HTMLElement {
 	connectedCallback() {
 		this.innerHTML = `
-      <nav class="thick-border" style="background:#18140c;display:flex;align-items:center;justify-content:space-between;padding:8px 24px;box-sizing:border-box;width:100%;">
+      <nav class="thick-border" style="background:#18140c;display:flex;align-items:center;justify-content:space-between;padding:8px 24px;box-sizing:border-box;width:100%;position:relative;">
         <div style="display:flex;align-items:center;gap:18px;">
           <span style="font-family:MagicCards,serif;font-size:1.5em;color:#e0cfa9;">Katariah's Website</span>
         </div>
@@ -11,10 +11,11 @@ class SiteNav extends HTMLElement {
           <a href="contact.html" class="button" style="min-width:90px;">Contact</a>
           <div style="position:relative;">
             <button id="dropdownBtn" class="button" style="min-width:100px;font-size:1.05em;">More ▼</button>
-            <div id="dropdownMenu" class="thick-border" style="display:none;position:absolute;right:0;top:110%;background:#1e180e;min-width:200px;z-index:100;">
-              <a href="guest-lecture.html" class="button" style="display:block;width:100%;text-align:left;border-bottom:1px solid #7f6c50;">Tech Talk</a>
-              <a href="pets.html" class="button" style="display:block;width:100%;text-align:left;border-bottom:1px solid #7f6c50;">My Pets</a>
-              <a href="fonts.html" class="button" style="display:block;width:100%;text-align:left;">My Fonts</a>
+            <div id="dropdownMenu" class="dropdown-menu" style="display:none;">
+              <a href="guest-lecture.html" class="dropdown-link">Tech Talk</a>
+              <a href="pets.html" class="dropdown-link">My Pets</a>
+              <a href="fonts.html" class="dropdown-link">My Fonts</a>
+              <a href="art.html" class="dropdown-link">Art & Fashion</a>
             </div>
           </div>
         </div>

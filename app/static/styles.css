@@ -551,6 +551,44 @@ header nav.thick-border {
 	padding-right: 1.5vw;
 }
 
+/* Dropdown menu refinements */
+.dropdown-menu {
+	position: absolute;
+	right: 0;
+	top: 110%;
+	background: #1e180e;
+	min-width: 220px;
+	max-height: 70vh;
+	overflow: auto;
+	border: 4px solid;
+	border-image: url(./src/menu/thin_border/thin_border.png) 2 fill repeat;
+	image-rendering: pixelated;
+	padding: 4px 0;
+	box-shadow: 0 4px 12px #000000aa;
+	z-index: 500;
+}
+.dropdown-link {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: #e0cfa9;
+	font-size: 1em;
+	background: #00000080;
+}
+.dropdown-link + .dropdown-link {
+	border-top: 1px solid #7f6c50;
+}
+.dropdown-link:hover,
+.dropdown-link:focus-visible {
+	background: #2a4b51cc;
+	outline: none;
+}
+.dropdown-link:active {
+	filter: brightness(0.9);
+}
+
 /* Responsive navigation toggle */
 .nav-toggle {
 	display: none;
