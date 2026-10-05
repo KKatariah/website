@@ -1,0 +1,2 @@
+# Apache: show the site's Morrowind 404 page for missing URLs
+ErrorDocument 404 /404.html
